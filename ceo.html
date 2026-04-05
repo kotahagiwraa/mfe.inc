@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CEO MESSAGE | KANAI KYOGI ENTERTAINMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f2f2;
+            --header-bg: #001529;
+            --header-text: #ffffff;
+            --text-color: #000000;
+            --border-color: #d1d1d1;
+            --side-padding: 40px;
+            --accent-blue: #0055ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 15px var(--side-padding);
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .header-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            color: var(--header-text);
+            white-space: nowrap;
+        }
+
+        /* --- Sub Hero --- */
+        .sub-hero {
+            padding-top: 140px;
+            padding-bottom: 60px;
+            padding-left: var(--side-padding);
+            padding-right: var(--side-padding);
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sub-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-blue {
+            display: inline-block;
+            background: linear-gradient(transparent 75%, var(--accent-blue) 75%);
+            padding: 0 5px;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px var(--side-padding);
+        }
+
+        .message-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .ceo-visual {
+            position: sticky;
+            top: 100px;
+        }
+
+        .ceo-image-wrapper {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-color: #ddd;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .ceo-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ceo-profile {
+            padding: 20px;
+            background-color: #ffffff;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .ceo-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+        }
+
+        .ceo-title {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 700;
+        }
+
+        .message-body h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .message-text p {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px var(--side-padding);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background-color: #ffffff;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Animations --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.is-show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .message-layout {
+                grid-template-columns: 1fr;
+            }
+            .ceo-visual {
+                position: static;
+                max-width: 400px;
+                margin: 0 auto 40px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo">MIHARA FALSE ENTERTAINMENT</a>
+</header>
+
+<main>
+    <section class="sub-hero">
+        <div class="fade-in" id="hero-title">
+            <h1><span class="highlight-blue">CEO MESSAGE</span></h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="message-layout">
+            <div class="ceo-visual fade-in">
+                <div class="ceo-image-wrapper">
+                    <img src="ceo-photo-large.jpg" alt="CEO 代表者近影">
+                </div>
+                <div class="ceo-profile">
+                    <p class="ceo-title">代表取締役社長 / CEO</p>
+                    <p class="ceo-name">ミハラ　タケシ (Mihara Takeshi)</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; color: #555;">
+                        1997年生まれ。エンターテインメント業界で数々の架空プロジェクトを成功させ、2026年にミハラ虚偽エンターテイメント株式会社を設立。「日常に潜む非日常」をテーマに、デジタルとリアルを融合させた新しい遊びの形を追求している。
+                    </p>
+                </div>
+            </div>
+
+            <div class="message-body fade-in">
+                <h2>「遊び」を「競技」に変える。<br>その熱狂を共に作り上げる仲間を待っています。</h2>
+                
+                <div class="message-text">
+                    <p>
+                        <strong>「カナイ」を裏切り、世界を更新する。</strong>
+                    </p>
+                    <p>
+                        私たちが向き合っているのは、コンテンツの海に埋もれた不特定多数の群衆ではありません。私たちのすべての知略、技術、そして情熱は、ただ一人の男——<strong>「カナイ」をアッと言わせること</strong>に注がれています。
+                    </p>
+                    <p>
+                        一人の人間を心底から驚愕させる。それは、世界中を熱狂させることよりも遥かに困難で、純粋なクリエイティブの極致です。現代において人々の想像力は飽和し、生半可な刺激では心は動きません。
+                    </p>
+                    <p>
+                        だからこそ、私たちはあえて「架空」を編み上げ、現実を侵食し、カナイの脳内に不可逆的な衝撃を刻み込みます。
+                    </p>
+                    <p>
+                        私たちの挑戦に、終わりはありません。昨日までの驚きは、今日にはもう日常という名の退屈に成り下がるからです。
+                    </p>
+                    <p>
+                        私は常に、新しい<strong>「傾奇者（かぶきもの）」</strong>を求めています。<br>
+                        常識を疑い、既存の枠組みを破壊し、カナイという難攻不落の壁をともに突き崩す仲間を。
+                    </p>
+                    <p>
+                        すべては、その一瞬の表情のために。<br>
+                        誰も見たことのない景色を、ここから一緒に作り上げましょう。
+                    </p>
+                    
+                    <p style="margin-top: 60px; font-weight: 700; border-top: 1px solid #eee; padding-top: 20px;">
+                        2026年4月吉日<br>
+                        ミハラ虚偽エンターテイメント株式会社 代表取締役<br>
+                        <span style="font-size: 1.2rem;">ミハラ　タケシ</span>
+                    </p>
+                </div>
+
+                <a href="index.html" class="back-link">← BACK TO HOME</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div>© 2026 KANAI KYOGI ENTERTAINMENT</div>
+    <div>DESIGNED BY FICTION</div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+            }
+        });
+    }, { rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

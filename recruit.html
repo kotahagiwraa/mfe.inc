@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RECRUIT | KANAI KYOGI ENTERTAINMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f2f2;
+            --header-bg: #001529;
+            --header-text: #ffffff;
+            --text-color: #000000;
+            --border-color: #d1d1d1;
+            --side-padding: 40px;
+            --accent-blue: #0055ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 15px var(--side-padding);
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .header-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            color: var(--header-text);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            position: relative;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 var(--side-padding);
+            background-color: var(--header-bg);
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            display: block;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .highlight-blue {
+            display: inline-block;
+            background: linear-gradient(transparent 75%, var(--accent-blue) 75%);
+            padding: 0 5px;
+        }
+
+        /* --- Section Intro --- */
+        .intro-text {
+            padding: 80px var(--side-padding);
+            background: #fff;
+            text-align: center;
+        }
+
+        .intro-text p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 2;
+        }
+
+        /* --- Job Grid --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            background-color: var(--border-color);
+            gap: 1px;
+        }
+
+        .grid-item {
+            background-color: #ffffff;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .grid-item.is-show {
+            opacity: 1;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            transform: translate(0, 0);
+        }
+
+        .item-content {
+            padding: 80px var(--side-padding);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .item-text-part {
+            order: 1;
+        }
+
+        .item-image-part {
+            order: 2;
+        }
+
+        /* 交互に配置を変える */
+        .grid-item:nth-child(even) .item-text-part { order: 2; }
+        .grid-item:nth-child(even) .item-image-part { order: 1; }
+
+        .item-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            display: block;
+            letter-spacing: 0.1em;
+        }
+
+        .grid-item h3 {
+            font-size: 2rem;
+            margin: 0 0 25px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .job-description {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .job-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .job-details li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .job-details li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.7em;
+            width: 8px;
+            height: 2px;
+            background: var(--accent-blue);
+        }
+
+        .item-image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .item-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px var(--side-padding);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background-color: #ffffff;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .item-content { 
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px var(--side-padding);
+            }
+            .item-text-part, .grid-item:nth-child(even) .item-text-part { order: 2; }
+            .item-image-part, .grid-item:nth-child(even) .item-image-part { order: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .hero h2 { font-size: 1.5rem; }
+            .grid-item h3 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo">MIHARA FALSE ENTERTAINMENT</a>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">CAREERS</span>
+            <h2>
+                <span class="highlight-blue">カナイの予想を、</span><br>
+                <span class="highlight-blue">裏切り続ける仕事。</span>
+            </h2>
+        </div>
+    </section>
+
+    <section class="intro-text">
+        <p>
+            私たちは、ターゲットの思考を読み、その一歩先で待ち構える「驚きの設計者」を募集しています。
+        </p>
+    </section>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="item-content">
+                <div class="item-text-part">
+                    <span class="item-label">POS01 / PLANNING & MANAGEMENT</span>
+                    <h3>企画・マネージャー</h3>
+                    <p class="job-description">
+                        ドッキリの根幹となるシナリオ作成から、プロジェクト全体の進行管理を担います。カナイの行動パターンを分析し、最も効果的な「仕掛け」のタイミングを算出する、軍師のような役割です。
+                    </p>
+                    <ul class="job-details">
+                        <li>競技内容（ドッキリ・クイズ）の企画立案</li>
+                        <li>タイムスケジュールの策定および進捗管理</li>
+                        <li>外部協力者との折衝・キャスティング</li>
+                    </ul>
+                </div>
+                <div class="item-image-part">
+                    <div class="item-image-wrapper">
+                        <img src="recruit-planning.jpg" alt="Planning and Management">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-content">
+                <div class="item-text-part">
+                    <span class="item-label">POS02 / CREATIVE & EDITING</span>
+                    <h3>動画編集・コンテンツ作成</h3>
+                    <p class="job-description">
+                        記録された「競技」の瞬間を、最高純度のエンターテインメントへと昇華させるクリエイター。テンポ、音響、テロップ。すべてはカナイのリアクションを最も輝かせるために存在します。
+                    </p>
+                    <ul class="job-details">
+                        <li>YouTube等プラットフォーム向け動画編集</li>
+                        <li>番組風テロップ・モーショングラフィックス制作</li>
+                        <li>視聴者の感情をコントロールする演出設計</li>
+                    </ul>
+                </div>
+                <div class="item-image-part">
+                    <div class="item-image-wrapper">
+                        <img src="recruit-editing.jpg" alt="Video Editing">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-content">
+                <div class="item-text-part">
+                    <span class="item-label">POS03 / FIELD INVESTIGATION</span>
+                    <h3>探偵業（フィールドリサーチ）</h3>
+                    <p class="job-description">
+                        企画の成功率を100%に近づけるための情報収集。ターゲットの動線確認から、撮影現場の下見、隠しカメラの最適な設置ポイントの選定まで、隠密行動のスペシャリストを求めています。
+                    </p>
+                    <ul class="job-details">
+                        <li>ターゲットの行動スケジュール・動線調査</li>
+                        <li>撮影ロケーションの隠密ロケハン</li>
+                        <li>現場における機密保持と監視業務</li>
+                    </ul>
+                </div>
+                <div class="item-image-part">
+                    <div class="item-image-wrapper">
+                        <img src="recruit-detective.jpg" alt="Detective Work">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div>© 2026 KANAI KYOGI ENTERTAINMENT</div>
+    <div>DESIGNED BY FICTION</div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+            }
+        });
+    }, { rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.grid-item').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

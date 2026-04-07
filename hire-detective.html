@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RECRUIT | MIHARA FALSE ENTERTAINMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f2f2;
+            --header-bg: #001529;
+            --header-text: #ffffff;
+            --text-color: #000000;
+            --border-color: #d1d1d1;
+            --side-padding: 40px;
+            --accent-blue: #0055ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 15px var(--side-padding);
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .header-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            color: var(--header-text);
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 120px auto 80px;
+            padding: 0 var(--side-padding);
+            box-sizing: border-box;
+        }
+
+        .post-meta { margin-bottom: 20px; }
+        .post-category {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            margin-bottom: 10px;
+            letter-spacing: 0.1em;
+        }
+        .post-date { display: block; font-size: 0.9rem; font-weight: 700; color: #666; }
+
+        .post-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin: 10px 0 40px 0;
+            font-weight: 700;
+        }
+
+        .post-body {
+            background: #ffffff;
+            padding: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .post-body h2 {
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 15px;
+            margin: 45px 0 20px;
+            font-weight: 700;
+        }
+
+        .post-body p { margin-bottom: 25px; font-size: 1rem; }
+
+        .job-spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .job-spec-table th, .job-spec-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .job-spec-table th {
+            width: 30%;
+            color: #666;
+            font-weight: 700;
+        }
+
+        .apply-box {
+            margin: 50px 0 20px;
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-apply {
+            display: inline-block;
+            background: #06C755; /* LINE Green */
+            color: #fff !important;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-apply:hover { opacity: 0.8; }
+
+        .back-nav { margin-top: 50px; text-align: center; }
+        .btn-back {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            padding: 12px 30px;
+            transition: all 0.3s;
+        }
+        .btn-back:hover { background: var(--header-bg); color: #fff; }
+
+        footer {
+            padding: 60px var(--side-padding);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background-color: #ffffff;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 640px) {
+            :root { --side-padding: 20px; }
+            .post-body { padding: 30px 20px; }
+            .job-spec-table th { width: 40%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="header-logo">MIHARA FALSE ENTERTAINMENT</a>
+</header>
+
+<article class="article-container">
+    <div class="post-meta">
+        <span class="post-category">RECRUIT / FIELD RESEARCH</span>
+        <span class="post-date">2026.04.07</span>
+    </div>
+
+    <h1 class="post-title">フィールドリサーチ（探偵業務）募集</h1>
+
+    <div class="post-body">
+        <p>
+            我が社が提供する「Surprise Design」は、対象者の行動、習慣、深層心理に至るまでの緻密な調査なしには成立しません。
+        </p>
+        <p>
+            我々が求めているのは、単なる調査員ではありません。現実という舞台を完璧に整えるために、静かに、そして確実に情報を収集する「影の演出家」です。カナイを、そして世界をアッと言わせるための「素材」を収集する仲間を募集します。
+        </p>
+
+        <h2>募集要項</h2>
+        <table class="job-spec-table">
+            <tr>
+                <th>職種</th>
+                <td>フィールドリサーチ（探偵業務・情報収集）</td>
+            </tr>
+            <tr>
+                <th>業務内容</th>
+                <td>
+                    ・特定対象者の行動調査および追跡<br>
+                    ・「驚き」の演出に必要なロケーションの選定・下見<br>
+                    ・各種データベースを用いた知的リサーチ<br>
+                    ・潜入、聞き取り調査を伴う情報収集
+                </td>
+            </tr>
+            <tr>
+                <th>求める人物像</th>
+                <td>
+                    ・強い好奇心と、それを裏打ちする忍耐力がある方<br>
+                    ・「遊び」を「競技」として捉えられるプロ意識のある方<br>
+                    ・守秘義務を遵守し、倫理観を持って行動できる方<br>
+                    ・現場での臨機応変な判断に自信がある方
+                </td>
+            </tr>
+            <tr>
+                <th>勤務地</th>
+                <td>鶴見•川崎駅付近（プロジェクトにより全国出張あり）</td>
+            </tr>
+            <tr>
+                <th>雇用形態</th>
+                <td>プロジェクト単位の業務委託（副業可）</td>
+            </tr>
+        </table>
+
+        <h2>「傾奇者」へのメッセージ</h2>
+        <p>
+            この仕事にマニュアルはありません。対象者がどこで足を止め、何に心を動かすのか。それを解き明かすプロセスそのものが、最高のエンターテインメントだと考えています。
+        </p>
+        <p>
+            あなたの持つ観察眼を、誰かの人生を揺さぶる「驚き」のために使ってみませんか？
+        </p>
+
+        <div class="apply-box">
+            <p style="font-weight: 700; margin-bottom: 20px;">エントリー・詳細のお問い合わせは<br>公式LINEから「リサーチ希望」と送信してください。</p>
+            <a href="https://lin.ee/Px2asSo" class="btn-apply">公式LINEから応募する</a>
+        </div>
+    </div>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back">← BACK TO HOME</a>
+    </div>
+</article>
+
+<footer>
+    <div>© 2026 KANAI KYOGI ENTERTAINMENT</div>
+    <div>DESIGNED BY FICTION</div>
+</footer>
+
+</body>
+</html>
